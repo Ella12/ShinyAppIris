@@ -1,0 +1,55 @@
+---
+title: "Iris Data Set Shiny Application"
+author: "Ella S."
+date: "February 10, 2016"
+output: html_document
+---
+
+
+##Purpose
+The purpose of this application is to demonstrate different features of the shiny framework by Rstudio.
+
+This web application is based on the [famous Iris data set](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html) 
+
+Inspired from the  
+[shiny gallery example](http://shiny.rstudio.com/gallery/kmeans-example.html)
+
+```{r}
+head(iris)
+levels(iris$Species)
+```
+
+
+##What it does
+This application takes the Iris data set and runs a simple regression model for the different parameters 
+that  are choosen from the web interface. 
+
+
+The are  3 Tabs : ***Plot/Summary/Photo***
+
+* **Plot** -  plots the x, y  relation according to different Iris species and also plots the relation for all species.
+
+    x,y axes can be choosen from dropdown lists, which are the Iris flower features 
+
+```{r}
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width, pch=20,cex=3,col=iris$Species)
+```
+
+* **Summary** - summary for the regression model 
+```{r}
+   summary(lm(iris$Sepal.Width ~ iris$Sepal.Length))
+```
+
+* **Photo** - this tab includes  the picture for each Iris species  from Wikipedia
+
+## Usage
+1) Choose the  Iris species from the radio box
+2) Choose the x, y axes from the dropdown lists 
+3) Navigate  to Summary tab to see the regression model results
+4) Navigate to Photo tab to view Iris picture
+5) Choose different options for each tab 
+
+
+
+
+
